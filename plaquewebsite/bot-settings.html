@@ -1,0 +1,307 @@
+<!-- @format -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bot Settings - PlanQue</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Istok+Web:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="app" id="app">
+      <!-- SIDEBAR (same structure as brand) -->
+      <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+        <div class="brand">
+          <button id="toggleBtn" class="hamburger" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="brand-logo">
+            <div class="logo-full">
+              <span class="logo-irish">Plan</span
+              ><span class="logo-irish-que">Que</span>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html" class="nav-item" data-key="dashboard">
+            <span class="nav-icon"
+              ><i class="fa-solid fa-table-cells"></i
+            ></span>
+            <span class="nav-text">Dashboard</span>
+          </a>
+
+          <a href="brand.html" class="nav-item" data-key="brands">
+            <span class="nav-icon"><i class="fa-solid fa-tag"></i></span>
+            <span class="nav-text">Brands &amp; Categories</span>
+          </a>
+
+          <a
+            href="bot-settings.html"
+            class="nav-item active"
+            data-key="botsettings"
+          >
+            <span class="nav-icon"><i class="fa-solid fa-robot"></i></span>
+            <span class="nav-text">Bot Settings</span>
+          </a>
+
+          <a href="activity-log.html" class="nav-item" data-key="activity">
+            <span class="nav-icon"><i class="fa-solid fa-chart-line"></i></span>
+            <span class="nav-text">Activity Log</span>
+          </a>
+
+          <a href="account.html" class="nav-item" data-key="account">
+            <span class="nav-icon"><i class="fa-solid fa-user-gear"></i></span>
+            <span class="nav-text">Account</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <a href="#" class="nav-item logout">
+            <span class="nav-icon"
+              ><i class="fa-solid fa-right-from-bracket"></i
+            ></span>
+            <span class="nav-text">Log Out</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main" id="main">
+        <header class="header">
+          <div class="title">
+            <h1>Bot Settings</h1>
+            <p class="subtitle">Configure your Vinted monitoring bot</p>
+          </div>
+        </header>
+
+        <!-- PRICE FILTERS -->
+        <section class="panel">
+          <h2 class="panel-title">Price Filters</h2>
+          <p class="panel-sub">Set minimum and maximum price ranges</p>
+
+          <div class="row">
+            <div class="col">
+              <label class="label">Minimum Price (€)</label>
+              <div class="custom-select" data-value="12" data-name="minPrice">
+                <button class="select-btn">
+                  <span class="select-label">12</span
+                  ><i class="fa-solid fa-caret-down"></i>
+                </button>
+                <ul class="select-list" role="listbox">
+                  <li data-value="5">5</li>
+                  <li data-value="8">8</li>
+                  <li data-value="12">12</li>
+                  <li data-value="20">20</li>
+                  <li data-value="50">50</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col">
+              <label class="label">Maximum Price (€)</label>
+              <div class="custom-select" data-value="300" data-name="maxPrice">
+                <button class="select-btn">
+                  <span class="select-label">300</span
+                  ><i class="fa-solid fa-caret-down"></i>
+                </button>
+                <ul class="select-list" role="listbox">
+                  <li data-value="50">50</li>
+                  <li data-value="100">100</li>
+                  <li data-value="200">200</li>
+                  <li data-value="300">300</li>
+                  <li data-value="500">500</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ITEM CONDITION -->
+        <section class="panel">
+          <h2 class="panel-title">Item Condition</h2>
+          <p class="panel-sub">Filter items by their condition</p>
+
+          <div class="row single">
+            <label class="label">Conditions</label>
+            <div
+              class="custom-select wide"
+              data-value="All Conditions"
+              data-name="condition"
+            >
+              <button class="select-btn">
+                <span class="select-label">All Conditions</span
+                ><i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="select-list" role="listbox">
+                <li data-value="All Conditions">All Conditions</li>
+                <li data-value="New with tags">New with tags</li>
+                <li data-value="Good">Good</li>
+                <li data-value="Very Good">Very Good</li>
+                <li data-value="Satisfactory">Satisfactory</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- BOT BEHAVIOR -->
+        <section class="panel">
+          <h2 class="panel-title">Bot Behavior</h2>
+          <p class="panel-sub">Configure how the bot operates</p>
+
+          <div class="form-row">
+            <div class="form-col toggle-col">
+              <div class="toggle-row">
+                <div>
+                  <strong>Enable Auto-Buy</strong>
+                  <div class="muted">
+                    Automatically purchase items matching your criteria
+                  </div>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="enableAutoBuy" checked />
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+              <div class="toggle-row">
+                <div>
+                  <strong>Send Discord Alerts</strong>
+                  <div class="muted">
+                    Get notified on Discord when new items are found
+                  </div>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="sendAlerts" checked />
+                  <span class="slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-col">
+              <label class="label">Discord Channel</label>
+              <div
+                class="custom-select wide"
+                data-value="#streetwear-alerts"
+                data-name="discordChannel"
+              >
+                <button class="select-btn">
+                  <span class="select-label">#streetwear-alerts</span
+                  ><i class="fa-solid fa-caret-down"></i>
+                </button>
+                <ul class="select-list" role="listbox">
+                  <li data-value="#streetwear-alerts">#streetwear-alerts</li>
+                  <li data-value="#luxury-finds">#luxury-finds</li>
+                  <li data-value="#premium">#premium</li>
+                  <li data-value="#general">#general</li>
+                </ul>
+              </div>
+
+              <label class="label" style="margin-top: 18px"
+                >Scan Interval</label
+              >
+              <div
+                class="custom-select wide"
+                data-value="Every 2 minutes"
+                data-name="scanInterval"
+              >
+                <button class="select-btn">
+                  <span class="select-label">Every 2 minutes</span
+                  ><i class="fa-solid fa-caret-down"></i>
+                </button>
+                <ul class="select-list" role="listbox">
+                  <li data-value="Every minute">Every minute</li>
+                  <li data-value="Every 2 minutes">Every 2 minutes</li>
+                  <li data-value="Every 5 minutes">Every 5 minutes</li>
+                  <li data-value="Every 10 minutes">Every 10 minutes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="actions-bar">
+          <button id="saveBtn" class="btn solid save">Save Changes</button>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal (reuse brand modal markup if needed) -->
+    <div class="modal-overlay" id="addBrandModal" aria-hidden="true">
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <h3 id="modalTitle">Add Brand</h3>
+
+        <form id="addBrandForm">
+          <label>
+            Brand name
+            <input type="text" id="brandName" name="brandName" required />
+          </label>
+
+          <label>
+            Category
+            <select id="brandCategory" name="brandCategory" required>
+              <option value="Streetwears">Streetwears</option>
+              <option value="Sportwears">Sportwears</option>
+              <option value="Luxury">Luxury</option>
+            </select>
+          </label>
+
+          <div class="toggles">
+            <label
+              >Auto-Buy
+              <label class="switch small"
+                ><input type="checkbox" id="brandAutoBuy" /><span
+                  class="slider"
+                ></span
+              ></label>
+            </label>
+
+            <label
+              >Alerts
+              <label class="switch small"
+                ><input type="checkbox" id="brandAlerts" /><span
+                  class="slider"
+                ></span
+              ></label>
+            </label>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" id="cancelAddBrand" class="btn outline">
+              Cancel
+            </button>
+            <button type="submit" class="btn solid">Add Brand</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- JS (separate file) -->
+    <script src="bot-settings.js"></script>
+  </body>
+</html>

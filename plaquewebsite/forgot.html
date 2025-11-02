@@ -1,0 +1,108 @@
+<!-- @format -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PlanQue - Forgot Password</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <div class="logo">Plan<span>Que</span></div>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div class="actions">
+          <div class="lang" id="langToggle">
+            <span class="globe"><i class="fa-solid fa-globe"></i></span>
+            <span class="lang-text">English</span>
+            <span class="dropdownn"
+              ><i class="fa-solid fa-chevron-down"></i
+            ></span>
+
+            <ul class="lang-dropdown" id="langMenu" aria-label="language list">
+              <li>🇬🇧 English</li>
+              <li>🇫🇷 French</li>
+              <li>🇩🇪 German</li>
+              <li>🇪🇸 Spanish</li>
+              <li>🇮🇹 Italian</li>
+            </ul>
+          </div>
+
+          <a class="auth" href="login.html">Log In</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="auth-page">
+      <div class="auth-card">
+        <h1 class="logo center">Plan<span>Que</span></h1>
+
+        <p class="signin-text">
+          Forgot your password?<br />
+          <span>We'll send a password reset link to your inbox</span>
+        </p>
+
+        <form class="auth-form">
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email" required />
+
+          <button type="submit" class="btn full">
+            Send password reset instructions
+          </button>
+        </form>
+
+        <div class="switch-auth">
+          <a href="signup.html">Sign Up</a> / <a href="login.html">Log In</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- JS for language dropdown -->
+    <script>
+      const langToggle = document.getElementById("langToggle");
+      const langMenu = document.getElementById("langMenu");
+
+      langToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        langToggle.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!langToggle.contains(e.target)) {
+          langToggle.classList.remove("active");
+        }
+      });
+
+      langMenu.querySelectorAll("li").forEach((item) => {
+        item.addEventListener("click", () => {
+          document.querySelector(".lang-text").textContent =
+            item.textContent.trim();
+          langToggle.classList.remove("active");
+        });
+      });
+    </script>
+  </body>
+</html>

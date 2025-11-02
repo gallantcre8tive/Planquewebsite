@@ -1,0 +1,228 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Brands & Categories - PlanQue</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Istok+Web:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app" id="app">
+      <!-- SIDEBAR -->
+      <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+        <div class="brand">
+          <button id="toggleBtn" class="hamburger" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="brand-logo">
+            <div class="logo-full">
+              <span class="logo-irish">Plan</span
+              ><span class="logo-irish-que">Que</span>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html" class="nav-item" data-key="dashboard">
+            <span class="nav-icon"
+              ><i class="fa-solid fa-table-cells"></i
+            ></span>
+            <span class="nav-text">Dashboard</span>
+          </a>
+
+          <a href="brand.html" class="nav-item active" data-key="brands">
+            <span class="nav-icon"><i class="fa-solid fa-tag"></i></span>
+            <span class="nav-text">Brands &amp; Categories</span>
+          </a>
+
+          <a href="bot-settings.html" class="nav-item" data-key="botsettings">
+            <span class="nav-icon"><i class="fa-solid fa-robot"></i></span>
+            <span class="nav-text">Bot Settings</span>
+          </a>
+
+          <a href="activity-log.html" class="nav-item" data-key="activity">
+            <span class="nav-icon"><i class="fa-solid fa-chart-line"></i></span>
+            <span class="nav-text">Activity Log</span>
+          </a>
+
+          <a href="account.html" class="nav-item" data-key="account">
+            <span class="nav-icon"><i class="fa-solid fa-user-gear"></i></span>
+            <span class="nav-text">Account</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <a href="#" class="nav-item logout">
+            <span class="nav-icon"
+              ><i class="fa-solid fa-right-from-bracket"></i
+            ></span>
+            <span class="nav-text">Log Out</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main" id="main">
+        <header class="header">
+          <div class="title">
+            <h1>Brands &amp; Categories</h1>
+            <p class="subtitle">
+              Manage which brands and categories to monitor
+            </p>
+          </div>
+
+          <div class="actions">
+            <!-- Add Brand button with plus icon -->
+            <button id="openAddBrandBtn" class="btn add-brand">
+              <span class="plus"><i class="fa-solid fa-plus"></i></span>
+              Add Brand
+            </button>
+          </div>
+        </header>
+
+        <!-- table area -->
+        <div class="table-container">
+          <table id="brandsTable">
+            <thead>
+              <tr>
+                <th>Brand</th>
+                <th>Category</th>
+                <th>Auto-Buy</th>
+                <th>Alerts</th>
+                <th>Last Scan</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- sample rows -->
+              <tr>
+                <td>Nike</td>
+                <td>Streetwears</td>
+                <td>
+                  <label class="switch"
+                    ><input type="checkbox" checked /><span
+                      class="slider"
+                    ></span
+                  ></label>
+                </td>
+                <td>
+                  <label class="switch"
+                    ><input type="checkbox" checked /><span
+                      class="slider"
+                    ></span
+                  ></label>
+                </td>
+                <td><i class="fa-regular fa-clock"></i> 16 mins ago</td>
+                <td>
+                  <button class="icon-btn delete-btn" title="Delete">
+                    <i class="fa-regular fa-trash-can"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Adidas</td>
+                <td>Sportwears</td>
+                <td>
+                  <label class="switch"
+                    ><input type="checkbox" /><span class="slider"></span
+                  ></label>
+                </td>
+                <td>
+                  <label class="switch"
+                    ><input type="checkbox" /><span class="slider"></span
+                  ></label>
+                </td>
+                <td><i class="fa-regular fa-clock"></i> 16 mins ago</td>
+                <td>
+                  <button class="icon-btn delete-btn" title="Delete">
+                    <i class="fa-regular fa-trash-can"></i>
+                  </button>
+                </td>
+              </tr>
+              <!-- more sample rows... -->
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+
+    <!-- ADD BRAND MODAL -->
+    <div class="modal-overlay" id="addBrandModal" aria-hidden="true">
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <h3 id="modalTitle">Add Brand</h3>
+
+        <form id="addBrandForm">
+          <label>
+            Brand name
+            <input type="text" id="brandName" name="brandName" required />
+          </label>
+
+          <label>
+            Category
+            <select id="brandCategory" name="brandCategory" required>
+              <option value="Streetwears">Streetwears</option>
+              <option value="Sportwears">Sportwears</option>
+              <option value="Luxury">Luxury</option>
+            </select>
+          </label>
+
+          <div class="toggles">
+            <label
+              >Auto-Buy
+              <label class="switch small"
+                ><input type="checkbox" id="brandAutoBuy" /><span
+                  class="slider"
+                ></span
+              ></label>
+            </label>
+
+            <label
+              >Alerts
+              <label class="switch small"
+                ><input type="checkbox" id="brandAlerts" /><span
+                  class="slider"
+                ></span
+              ></label>
+            </label>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" id="cancelAddBrand" class="btn outline">
+              Cancel
+            </button>
+            <button type="submit" class="btn solid">Add Brand</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="brand.js"></script>
+  </body>
+</html>

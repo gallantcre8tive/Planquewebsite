@@ -1,0 +1,114 @@
+<!-- @format -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PlanQue - Vinted Automation</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rye&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/plaquewebsite/plaque.css" />
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <div class="logo">Plan<span>Que</span></div>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div class="actions">
+          <div class="lang" id="langToggle">
+            <span class="globe"><i class="fa-solid fa-globe"></i></span>
+            <span class="lang-text">English</span>
+            <span class="dropdownn"
+              ><i class="fa-solid fa-chevron-down"></i
+            ></span>
+
+            <ul class="lang-dropdown" id="langMenu" aria-label="language list">
+              <li data-lang="en">English</li>
+              <li data-lang="fr">Français</li>
+              <li data-lang="es">Español</li>
+              <li data-lang="de">Deutsch</li>
+              <li data-lang="it">Italiano</li>
+            </ul>
+          </div>
+
+          <div class="auth">
+            <a href="signup.html">Sign up</a> /
+            <a href="login.html">Log in</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1 class="hero-title">
+          Boost Your Sales with <span class="vinted">Vinted</span> Automation
+        </h1>
+
+        <!-- decorative rotating rings -->
+        <div class="ring ring-left" aria-hidden="true"></div>
+        <div class="ring ring-right" aria-hidden="true"></div>
+
+        <p class="subtitle">
+          Save Time, Streamline Management, and Increase Sales with Ease
+        </p>
+
+        <div class="cta-row">
+          <a class="btn outline" href="#">
+            <img src="/Plaquewebsite/public/images/playstore.png" alt="play" />
+            <span>Download App</span>
+          </a>
+
+          <a class="btn primary" href="#" title="Join our Discord">
+            <img src="/Plaquewebsite/public/images/discord.png" alt="discord" />
+            <span>Join Our Community</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript for dropdown -->
+    <script>
+      const langToggle = document.getElementById("langToggle");
+      const langMenu = document.getElementById("langMenu");
+
+      langToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        langToggle.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!langToggle.contains(e.target)) {
+          langToggle.classList.remove("active");
+        }
+      });
+
+      langMenu.querySelectorAll("li").forEach((item) => {
+        item.addEventListener("click", () => {
+          document.querySelector(".lang-text").textContent =
+            item.textContent.trim();
+          langToggle.classList.remove("active");
+        });
+      });
+    </script>
+  </body>
+</html>

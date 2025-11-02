@@ -1,0 +1,146 @@
+<!-- @format -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PlanQue - Sign In</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="plaque.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <a href="index.html" class="logo">Plan<span>Que</span></a>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div class="actions">
+          <div class="lang" id="langToggle">
+            <span class="globe"><i class="fa-solid fa-globe"></i></span>
+            <span class="lang-text">English</span>
+            <span class="dropdownn"
+              ><i class="fa-solid fa-chevron-down"></i
+            ></span>
+
+            <ul class="lang-dropdown" id="langMenu" aria-label="language list">
+              <li>🇬🇧 English</li>
+              <li>🇫🇷 French</li>
+              <li>🇩🇪 German</li>
+              <li>🇪🇸 Spanish</li>
+              <li>🇮🇹 Italian</li>
+            </ul>
+          </div>
+
+          <a class="auth" href="signup.html">Sign up</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="auth-page">
+      <div class="auth-card">
+        <h1 class="logo center">Plan<span>Que</span></h1>
+        <p class="signin-text">
+          Sign in to account <br />
+          <span
+            >Don't have an account?
+            <a href="signup.html">Sign up</a>
+            for an account now.</span
+          >
+        </p>
+
+        <form class="auth-form" onsubmit="login(event)">
+          <label>Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+
+          <label>Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+          />
+
+          <div class="auth-options">
+            <label class="checkbox">
+              <input type="checkbox" />
+              <span>Keep me logged in</span>
+            </label>
+            <a href="forgot.html" class="forgot">Forgot your password?</a>
+          </div>
+
+          <button type="submit" class="btn primary full">Sign in</button>
+        </form>
+      </div>
+    </main>
+
+    <!-- JS for language dropdown -->
+    <script>
+      const langToggle = document.getElementById("langToggle");
+      const langMenu = document.getElementById("langMenu");
+
+      langToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        langToggle.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!langToggle.contains(e.target)) {
+          langToggle.classList.remove("active");
+        }
+      });
+
+      langMenu.querySelectorAll("li").forEach((item) => {
+        item.addEventListener("click", () => {
+          document.querySelector(".lang-text").textContent =
+            item.textContent.trim();
+          langToggle.classList.remove("active");
+        });
+      });
+
+      //   login
+      function login(event) {
+        // Prevent form reload
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        // Example credentials (replace with real backend validation)
+        const validEmail = "scarywizardd@gmail.com";
+        const validPassword = "1234567";
+
+        if (email === validEmail && password === validPassword) {
+          // Redirect to dashboard
+          window.location.href = "index.html";
+        } else {
+          alert("Invalid email or password");
+        }
+      }
+    </script>
+  </body>
+</html>

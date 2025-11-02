@@ -1,0 +1,148 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Account Settings - PlanQue</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Istok+Web:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app" id="app">
+      <!-- SIDEBAR -->
+      <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+        <div class="brand">
+          <button id="toggleBtn" class="hamburger" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="brand-logo">
+            <div class="logo-full">
+              <span class="logo-irish">Plan</span
+              ><span class="logo-irish-que">Que</span>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html" class="nav-item" data-key="dashboard">
+            <span class="nav-icon"
+              ><i class="fa-solid fa-table-cells"></i
+            ></span>
+            <span class="nav-text">Dashboard</span>
+          </a>
+
+          <a href="brands.html" class="nav-item" data-key="brands">
+            <span class="nav-icon"><i class="fa-solid fa-tag"></i></span>
+            <span class="nav-text">Brands &amp; Categories</span>
+          </a>
+
+          <a href="bot-settings.html" class="nav-item" data-key="botsettings">
+            <span class="nav-icon"><i class="fa-solid fa-robot"></i></span>
+            <span class="nav-text">Bot Settings</span>
+          </a>
+
+          <a href="activity-log.html" class="nav-item" data-key="activity">
+            <span class="nav-icon"><i class="fa-solid fa-chart-line"></i></span>
+            <span class="nav-text">Activity Log</span>
+          </a>
+
+          <a href="account.html" class="nav-item active" data-key="account">
+            <span class="nav-icon"><i class="fa-solid fa-user-gear"></i></span>
+            <span class="nav-text">Account</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <a href="logout.html" class="nav-item logout">
+            <span class="nav-icon"
+              ><i class="fa-solid fa-right-from-bracket"></i
+            ></span>
+            <span class="nav-text">Log Out</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main" id="main">
+        <header class="header">
+          <div class="title">
+            <h1 id="pageTitle">Account Settings</h1>
+            <p class="subtitle">Manage your account preferences</p>
+          </div>
+        </header>
+
+        <section class="account-section">
+          <div class="account-card">
+            <h2>Profile Information</h2>
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="LkPOS LUKA" value="LkPOS LUKA" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input
+                type="email"
+                placeholder="lkposluka001@yahoo.com"
+                value="lkposluka001@yahoo.com"
+              />
+            </div>
+          </div>
+
+          <div class="account-card">
+            <h2>Change Password</h2>
+            <div class="form-group">
+              <label>Current Password</label>
+              <input type="password" placeholder="••••••••" />
+            </div>
+            <div class="form-group">
+              <label>New Password</label>
+              <input type="password" placeholder="••••••••" />
+            </div>
+            <div class="form-group">
+              <label>Confirm New Password</label>
+              <input type="password" placeholder="••••••••" />
+            </div>
+          </div>
+
+          <div class="account-card">
+            <h2>Vinted Credentials</h2>
+            <div class="form-group">
+              <label>Vinted Email</label>
+              <input type="email" placeholder="lkposluka001@yahoo.com" />
+            </div>
+            <div class="form-group">
+              <label>API Token</label>
+              <input type="text" placeholder="Enter your Vinted API token" />
+            </div>
+          </div>
+
+          <button class="save-btn">
+            <i class="fa-solid fa-floppy-disk"></i> Save Changes
+          </button>
+        </section>
+      </main>
+    </div>
+
+    <script src="account.js"></script>
+  </body>
+</html>

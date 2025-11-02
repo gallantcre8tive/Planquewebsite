@@ -1,0 +1,99 @@
+<!-- @format -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Logout - PlanQue</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Istok+Web:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Existing dashboard CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Logout specific CSS -->
+    <link rel="stylesheet" href="logout.css" />
+  </head>
+  <body>
+    <div class="app" id="app">
+      <!-- SIDEBAR -->
+      <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+        <div class="brand">
+          <button id="toggleBtn" class="hamburger" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="brand-logo">
+            <div class="logo-full">
+              <span class="logo-irish">Plan</span
+              ><span class="logo-irish-que">Que</span>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html" class="nav-item" data-key="dashboard">
+            <span class="nav-icon"
+              ><i class="fa-solid fa-table-cells"></i
+            ></span>
+            <span class="nav-text">Dashboard</span>
+          </a>
+
+          <a href="brand.html" class="nav-item" data-key="brands">
+            <span class="nav-icon"><i class="fa-solid fa-tag"></i></span>
+            <span class="nav-text">Brands &amp; Categories</span>
+          </a>
+
+          <a href="bot-settings.html" class="nav-item" data-key="botsettings">
+            <span class="nav-icon"><i class="fa-solid fa-robot"></i></span>
+            <span class="nav-text">Bot Settings</span>
+          </a>
+
+          <a href="activity-log.html" class="nav-item" data-key="activity">
+            <span class="nav-icon"><i class="fa-solid fa-chart-line"></i></span>
+            <span class="nav-text">Activity Log</span>
+          </a>
+
+          <a href="account.html" class="nav-item" data-key="account">
+            <span class="nav-icon"><i class="fa-solid fa-user-gear"></i></span>
+            <span class="nav-text">Account</span>
+          </a>
+
+          <a href="logout.html" class="nav-item active" data-key="logout">
+            <span class="nav-icon"
+              ><i class="fa-solid fa-right-from-bracket"></i
+            ></span>
+            <span class="nav-text">Log Out</span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main logout-main" id="main">
+        <div class="logout-container">
+          <!-- <i class="fa-solid fa-right-from-bracket logout-icon"></i> -->
+          <h1>Are you sure you want to log out?</h1>
+          <div class="logout-buttons">
+            <button id="yesLogout" class="btn yes">Yes</button>
+            <button id="noLogout" class="btn no">No</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- JS -->
+    <script src="logout.js"></script>
+  </body>
+</html>

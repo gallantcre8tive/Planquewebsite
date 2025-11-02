@@ -1,0 +1,170 @@
+<!-- @format -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Activity Log - PlanQue</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Istok+Web:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app" id="app">
+      <!-- SIDEBAR -->
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <button id="toggleBtn" class="hamburger" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="brand-logo">
+            <div class="logo-full">
+              <span class="logo-irish">Plan</span
+              ><span class="logo-irish-que">Que</span>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <a href="index.html" class="nav-item" data-key="dashboard">
+            <span class="nav-icon"
+              ><i class="fa-solid fa-table-cells"></i
+            ></span>
+            <span class="nav-text">Dashboard</span>
+          </a>
+
+          <a href="brand.html" class="nav-item" data-key="brands">
+            <span class="nav-icon"><i class="fa-solid fa-tag"></i></span>
+            <span class="nav-text">Brands &amp; Categories</span>
+          </a>
+
+          <a href="bot-settings.html" class="nav-item" data-key="botsettings">
+            <span class="nav-icon"><i class="fa-solid fa-robot"></i></span>
+            <span class="nav-text">Bot Settings</span>
+          </a>
+
+          <a
+            href="activity-log.html"
+            class="nav-item active"
+            data-key="activity"
+          >
+            <span class="nav-icon"><i class="fa-solid fa-chart-line"></i></span>
+            <span class="nav-text">Activity Log</span>
+          </a>
+
+          <a href="account.html" class="nav-item" data-key="account">
+            <span class="nav-icon"><i class="fa-solid fa-user-gear"></i></span>
+            <span class="nav-text">Account</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <a href="#" class="nav-item logout">
+            <span class="nav-icon"
+              ><i class="fa-solid fa-right-from-bracket"></i
+            ></span>
+            <span class="nav-text">Log Out</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main" id="main">
+        <header class="header">
+          <div class="title">
+            <h1>Activity Log</h1>
+            <p class="subtitle">Recent bot actions and events</p>
+          </div>
+        </header>
+        <br />
+        <!-- Activity Log List -->
+        <section class="activity-container">
+          <div class="activity-card">
+            <div class="activity">
+              <div class="icon success"><i class="fa-solid fa-check"></i></div>
+              <div class="details">
+                <p>Bought 'Nike Dunks Low' - €45</p>
+                <span><i class="fa-regular fa-clock"></i> 10:05</span>
+              </div>
+              <div class="status success">Success</div>
+            </div>
+
+            <div class="activity">
+              <div class="icon alert"><i class="fa-solid fa-bell"></i></div>
+              <div class="details">
+                <p>New item: 'Adidas Y2K Tee' - €18</p>
+                <span><i class="fa-regular fa-clock"></i> 10:07</span>
+              </div>
+              <div class="status alert">alert</div>
+            </div>
+
+            <div class="activity">
+              <div class="icon success"><i class="fa-solid fa-check"></i></div>
+              <div class="details">
+                <p>Bought 'Jordan 1 Retro' - €95</p>
+                <span><i class="fa-regular fa-clock"></i> 10:18</span>
+              </div>
+              <div class="status success">Success</div>
+            </div>
+
+            <div class="activity">
+              <div class="icon alert"><i class="fa-solid fa-bell"></i></div>
+              <div class="details">
+                <p>New item: 'Gucci Belt' - €89</p>
+                <span><i class="fa-regular fa-clock"></i> 10:22</span>
+              </div>
+              <div class="status alert">alert</div>
+            </div>
+
+            <div class="activity">
+              <div class="icon success"><i class="fa-solid fa-check"></i></div>
+              <div class="details">
+                <p>Bought 'Supreme Box Logo' - €120</p>
+                <span><i class="fa-regular fa-clock"></i> 10:12</span>
+              </div>
+              <div class="status success">Success</div>
+            </div>
+
+            <div class="activity">
+              <div class="icon success"><i class="fa-solid fa-check"></i></div>
+              <div class="details">
+                <p>Bought 'Supreme Box Logo' - €120</p>
+                <span><i class="fa-regular fa-clock"></i> 10:12</span>
+              </div>
+              <div class="status success">Success</div>
+            </div>
+
+            <div class="activity">
+              <div class="icon alert"><i class="fa-solid fa-bell"></i></div>
+              <div class="details">
+                <p>New item: 'Gucci Belt' - €89</p>
+                <span><i class="fa-regular fa-clock"></i> 10:22</span>
+              </div>
+              <div class="status alert">alert</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- JS -->
+    <script src="activity-log.js"></script>
+  </body>
+</html>
